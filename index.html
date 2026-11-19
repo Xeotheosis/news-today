@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ==========================================================
+       THE DECOY 🕵️
+       Everything in this block is what shows up in the browser tab
+       and in link previews (WhatsApp, iMessage, Messenger, X, etc.).
+       The page itself has nothing to do with any of it.
+
+       ▸ To change the thumbnail: drop a 1200×630 JPG at
+         assets/preview-thumbnail.jpg (see assets/README.md).
+       ▸ og:image / twitter:image MUST be absolute URLs for most
+         link-preview scrapers, so if you rename the repo or use a
+         custom domain, update the https://xeotheosis.github.io/news-today URLs below (3 places).
+       ========================================================== -->
+  <title>Etsy Hacked: Resellers Beware | News Today – 19 Nov 2026</title>
+  <meta name="description" content="An unexpected development in the world of online reselling. Read the latest report.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="News Today">
+  <meta property="og:title" content="Etsy Hacked: Resellers Beware – Breaking News">
+  <meta property="og:description" content="An unexpected development in the world of online reselling. Read the latest report.">
+  <meta property="og:url" content="https://xeotheosis.github.io/news-today/">
+  <meta property="og:image" content="https://xeotheosis.github.io/news-today/assets/preview-thumbnail.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Breaking news report">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Etsy Hacked: Resellers Beware – Breaking News">
+  <meta name="twitter:description" content="An unexpected development in the world of online reselling. Read the latest report.">
+  <meta name="twitter:image" content="https://xeotheosis.github.io/news-today/assets/preview-thumbnail.jpg">
+
+  <meta name="theme-color" content="#FCE7F3">
+  <!-- Favicon: an emoji drawn as inline SVG (no image file needed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+
+  <a class="skip-link" href="#dashboard">Skip to the evidence</a>
+
+  <!-- ==========================================================
+       1. OPENING SCREEN — Emergency Cheer-Up Protocol
+       ========================================================== -->
+  <section id="opening" class="screen screen--opening is-active" aria-labelledby="opening-title">
+    <div class="float-layer" id="opening-floaters" aria-hidden="true"></div>
+
+    <div class="opening-card">
+      <div class="status-pill"><span class="pulse-dot" aria-hidden="true"></span> ALERT LEVEL: SOFT &amp; FLUFFY</div>
+      <p class="eyebrow mono">INCIDENT REPORT № <span id="incident-no">0001</span> · <span id="incident-date"></span></p>
+
+      <h1 id="opening-title" class="opening-title" data-tpl="opening.headline"></h1>
+      <p class="opening-sub" data-tpl="opening.subhead"></p>
+      <p class="opening-msg" data-tpl="opening.message"></p>
+
+      <div class="opening-actions">
+        <button type="button" class="btn btn--emergency" id="btn-emergency">
+          <span class="btn__shine" aria-hidden="true"></span>
+          🚨 INITIATE EMERGENCY HAPPINESS PROTOCOL
+        </button>
+        <button type="button" class="btn btn--secondary" id="btn-evidence">🔬 SHOW ME THE SCIENTIFIC EVIDENCE</button>
+      </div>
+
+      <p class="fineprint mono">Response time: immediate · Cost to you: nothing · Known side effects: smiling</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       2. EMERGENCY HAPPINESS PROTOCOL (full-screen overlay)
+       ========================================================== -->
+  <section id="emergency" class="overlay overlay--emergency" hidden role="dialog" aria-modal="true" aria-labelledby="emergency-title">
+    <div class="float-layer" id="emergency-floaters" aria-hidden="true"></div>
+
+    <div class="emergency-console" id="emergency-console">
+      <div class="siren" aria-hidden="true">🚨</div>
+      <h2 id="emergency-title" class="console-title mono">EMERGENCY HAPPINESS PROTOCOL</h2>
+      <ol class="protocol-log mono" id="protocol-log" aria-live="polite"></ol>
+      <div class="meter" aria-hidden="true"><span id="protocol-bar"></span></div>
+    </div>
+
+    <div class="emergency-finale" id="emergency-finale" hidden>
+      <div class="big-heart" aria-hidden="true">♡</div>
+      <h2 class="finale-title" data-tpl="emergency.finaleTitle"></h2>
+      <p class="finale-text" data-tpl="emergency.finaleText"></p>
+      <p class="hug-counter mono"><span id="hug-count">0</span> virtual hugs delivered</p>
+      <div class="finale-actions">
+        <button type="button" class="btn btn--secondary" id="btn-emergency-return">← Return to main interface</button>
+        <button type="button" class="btn btn--ghost" id="btn-emergency-more">💗 Send another shipment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       3. LOADING SEQUENCE (between opening and dashboard)
+       ========================================================== -->
+  <section id="loading" class="overlay overlay--loading" hidden aria-labelledby="loading-title">
+    <div class="loading-box">
+      <div class="loading-orb" aria-hidden="true"><span>🔬</span></div>
+      <h2 id="loading-title" class="console-title mono">GIRLFRIEND ANALYSIS ENGINE v14.2</h2>
+      <ol class="protocol-log protocol-log--loading mono" id="loading-log" aria-live="polite"></ol>
+      <div class="meter" aria-hidden="true"><span id="loading-bar"></span></div>
+      <p class="loading-done" id="loading-done" hidden data-tpl="loading.done"></p>
+      <button type="button" class="btn-link mono" id="btn-skip-loading">skip ›</button>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       4. THE DASHBOARD
+       ========================================================== -->
+  <main id="dashboard" class="screen screen--dashboard" hidden tabindex="-1">
+
+    <!-- Navigation -->
+    <header class="topbar">
+      <div class="topbar__brand">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="brand-mark">GAI™</span>
+        <span class="brand-sub mono">TERMINAL · LIVE</span>
+      </div>
+      <nav class="topbar__nav" aria-label="Sections">
+        <a href="#sec-charts">Charts</a>
+        <a href="#sec-thicc">Thicc Dept.</a>
+        <a href="#sec-forecast">Forecast</a>
+        <a href="#sec-classified">Classified</a>
+        <a href="#sec-certificate">Certificate</a>
+      </nav>
+      <button type="button" class="btn btn--mini-emergency" id="btn-nav-emergency" aria-label="Initiate emergency happiness protocol">🚨<span class="hide-sm"> Emergency</span></button>
+    </header>
+
+    <!-- Ticker tape -->
+    <div class="ticker" aria-label="Live market data">
+      <div class="ticker__track mono" id="ticker-track"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero reveal">
+      <p class="eyebrow mono">PEER-REVIEWED · INDEPENDENTLY FUNDED (BY ME) · 0% OBJECTIVE</p>
+      <h1 class="hero__title" data-tpl="dashboard.title"></h1>
+      <p class="hero__intro" data-tpl="dashboard.intro"></p>
+      <div class="kpis" id="kpis"></div>
+    </section>
+
+    <!-- Charts -->
+    <section id="sec-charts" class="grid">
+
+      <!-- A. Distribution of affection -->
+      <article class="card reveal">
+        <header class="card__head">
+          <span class="card__tag mono">FIG. A</span>
+          <h2 class="card__title" data-tpl="charts.affection.title"></h2>
+        </header>
+        <div class="chart-box chart-box--round"><canvas id="chart-affection" aria-label="Doughnut chart of my affection" role="img"></canvas></div>
+        <p class="caption" data-tpl="charts.affection.caption"></p>
+      </article>
+
+      <!-- D. Cuteness distribution -->
+      <article class="card reveal">
+        <header class="card__head">
+          <span class="card__tag mono">FIG. B</span>
+          <h2 class="card__title" data-tpl="charts.cuteness.title"></h2>
+        </header>
+        <div class="chart-box chart-box--round"><canvas id="chart-cuteness" aria-label="Pie chart of cuteness distribution" role="img"></canvas></div>
+        <p class="caption" data-tpl="charts.cuteness.caption"></p>
+      </article>
+
+      <!-- B. Top 10 -->
+      <article class="card card--wide reveal">
+        <header class="card__head">
+          <span class="card__tag mono">FIG. C</span>
+          <h2 class="card__title" data-tpl="charts.top10.title"></h2>
+        </header>
+        <div class="chart-box chart-box--tall"><canvas id="chart-top10" aria-label="Bar chart of the top 10 things I like about you" role="img"></canvas></div>
+        <p class="caption" data-tpl="charts.top10.caption"></p>
+      </article>
+
+      <!-- C. Love over time -->
+      <article class="card card--wide reveal">
+        <header class="card__head">
+          <span class="card__tag mono">FIG. D</span>
+          <h2 class="card__title" data-tpl="charts.loveOverTime.title"></h2>
+        </header>
+        <div class="chart-box"><canvas id="chart-love" aria-label="Line chart of my love for you over time" role="img"></canvas></div>
+        <div class="warning-banner" id="love-warning" aria-live="polite">
+          <span class="warning-banner__icon" aria-hidden="true">⚠</span>
+          <div>
+            <strong class="mono" data-tpl="charts.loveOverTime.warning"></strong>
+            <span class="warning-banner__note" data-tpl="charts.loveOverTime.annotation"></span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- E. Thiccness Analytics Division -->
+    <section id="sec-thicc" class="grid">
+      <article class="card card--wide card--thicc reveal">
+        <header class="card__head">
+          <span class="card__tag mono">DEPT. 🍑</span>
+          <h2 class="card__title" data-tpl="thicc.title"></h2>
+        </header>
+
+        <div class="thicc">
+          <div class="thicc__gauge">
+            <div class="gauge" aria-hidden="true">
+              <div class="gauge__arc"></div>
+              <div class="gauge__ticks"></div>
+              <div class="gauge__needle" id="gauge-needle"></div>
+              <div class="gauge__hub"></div>
+              <span class="gauge__lbl gauge__lbl--min mono">0</span>
+              <span class="gauge__lbl gauge__lbl--max mono">MAX</span>
+              <span class="gauge__broken mono" id="gauge-broken">NEEDLE<br>BROKE</span>
+            </div>
+          </div>
+
+          <div class="thicc__readout">
+            <p class="mono thicc__label" data-tpl="thicc.indexLabel"></p>
+            <p class="thicc__number" id="thicc-number" aria-live="off">0</p>
+            <p class="thicc__class"><span class="mono">CLASSIFICATION:</span> <strong data-tpl="thicc.classification"></strong></p>
+
+            <div class="overmeter">
+              <div class="overmeter__label mono"><span>Scale capacity used</span><span id="overmeter-pct">0%</span></div>
+              <div class="overmeter__track"><span id="overmeter-fill"></span></div>
+            </div>
+
+            <ul class="readings mono" id="thicc-readings"></ul>
+          </div>
+        </div>
+
+        <div class="conclusion">
+          <p><span class="mono conclusion__lbl">SCIENTIFIC CONCLUSION</span> <span data-tpl="thicc.conclusion"></span></p>
+          <p class="conclusion__disclaimer" data-tpl="thicc.disclaimer"></p>
+        </div>
+      </article>
+    </section>
+
+    <!-- F. Forecast + G. Missing you + Compliment generator -->
+    <section id="sec-forecast" class="grid">
+      <article class="card card--wide reveal">
+        <header class="card__head">
+          <span class="card__tag mono">FIG. E</span>
+          <h2 class="card__title" data-tpl="forecastTitle"></h2>
+        </header>
+        <div class="forecast" id="forecast"></div>
+      </article>
+
+      <article class="card reveal" id="missing-card">
+        <header class="card__head">
+          <span class="card__tag mono">FIG. F</span>
+          <h2 class="card__title" data-tpl="missingYou.title"></h2>
+        </header>
+        <p class="mono missing__status" id="missing-status">Monitoring…</p>
+        <div class="missing__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="missing-progress">
+          <span id="missing-fill"></span>
+          <em id="missing-pct" class="mono">0%</em>
+        </div>
+
+        <div class="errwin" id="missing-error" hidden role="alert">
+          <div class="errwin__bar mono"><span>MissingYou.exe</span><span aria-hidden="true">✕</span></div>
+          <div class="errwin__body">
+            <span class="errwin__icon" aria-hidden="true">⛔</span>
+            <div>
+              <strong class="mono" data-tpl="missingYou.errorTitle"></strong>
+              <p data-tpl="missingYou.errorText"></p>
+            </div>
+          </div>
+          <div class="errwin__actions">
+            <button type="button" class="btn btn--tiny" id="btn-missing-hug">Send hug 🤗</button>
+            <button type="button" class="btn btn--tiny btn--tiny-ghost" id="btn-missing-restart">Restart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <header class="card__head">
+          <span class="card__tag mono">LAB 07</span>
+          <h2 class="card__title" data-tpl="complimentTitle"></h2>
+        </header>
+        <blockquote class="compliment" id="compliment" aria-live="polite">Press the button to generate a peer-reviewed compliment.</blockquote>
+        <p class="mono compliment__meta" id="compliment-meta">Sample size: 1 (perfect)</p>
+        <button type="button" class="btn btn--secondary btn--full" id="btn-compliment">✨ Generate compliment</button>
+      </article>
+    </section>
+
+    <!-- 7. Classified intelligence -->
+    <section id="sec-classified" class="classified reveal" aria-labelledby="classified-title">
+      <div class="classified__stamp mono" aria-hidden="true">CLASSIFIED</div>
+      <p class="eyebrow mono">FILE 00 · EYES ONLY · CLEARANCE LEVEL: YOU</p>
+      <h2 id="classified-title" class="classified__title" data-tpl="classified.title"></h2>
+      <p class="classified__intro" data-tpl="classified.intro"></p>
+      <div class="notes" id="classified-notes"></div>
+    </section>
+
+    <!-- 8. Certificate -->
+    <section id="sec-certificate" class="cert-wrap reveal" aria-labelledby="cert-title">
+      <div class="cert">
+        <div class="cert__corner cert__corner--tl" aria-hidden="true">❦</div>
+        <div class="cert__corner cert__corner--tr" aria-hidden="true">❦</div>
+        <div class="cert__corner cert__corner--bl" aria-hidden="true">❦</div>
+        <div class="cert__corner cert__corner--br" aria-hidden="true">❦</div>
+
+        <p class="cert__org mono">THE GIRLFRIEND APPRECIATION INDEX™ · DEPARTMENT OF RESEARCH</p>
+        <h2 id="cert-title" class="cert__title" data-tpl="certificate.title"></h2>
+        <p class="cert__awarded">awarded to</p>
+        <p class="cert__name" data-tpl="certificate.recipient"></p>
+        <p class="cert__body" data-tpl="certificate.body"></p>
+        <p class="cert__class"><span class="mono">CLASSIFICATION</span><strong data-tpl="certificate.classification"></strong></p>
+
+        <div class="cert__foot">
+          <div class="cert__sig">
+            <span class="cert__sig-name" data-tpl="certificate.signatureScript"></span>
+            <span class="cert__sig-line"></span>
+            <span class="cert__sig-lbl" data-tpl="certificate.signature"></span>
+          </div>
+
+          <div class="seal" aria-label="Official research seal" role="img">
+            <div class="seal__ring">
+              <span class="seal__top mono">OFFICIAL</span>
+              <span class="seal__heart" aria-hidden="true">♥</span>
+              <span class="seal__bot mono">GAI™ SEAL</span>
+            </div>
+          </div>
+
+          <div class="cert__sig">
+            <span class="cert__sig-name cert__sig-name--date" id="cert-date"></span>
+            <span class="cert__sig-line"></span>
+            <span class="cert__sig-lbl">Date of certification</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p data-tpl="footer"></p>
+      <div class="footer__actions">
+        <button type="button" class="btn-link mono" id="btn-replay">↺ replay opening</button>
+        <a class="btn-link mono" href="#dashboard">↑ back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Chart.js (only external script) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
