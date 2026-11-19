@@ -53,6 +53,11 @@ Tips
 See [`assets/README.md`](assets/README.md). The current thumbnail is already in `assets/preview-thumbnail.jpg` (1200×670). To swap it, overwrite that file.
 The `og:image` URL in `index.html` is absolute (link scrapers require that). If you rename the repo or add a custom domain, update the three `https://…github.io/…` URLs in the `<head>`.
 
+## Updating the live site
+
+GitHub Pages redeploys automatically ~1 minute after every push to `main`.
+Browsers may cache files for up to 10 minutes; to force everyone onto new CSS/JS, bump the `?v=` number on the `style.css` and `script.js` links in `index.html`.
+
 ## Running locally
 
 Just open `index.html` in a browser, or run `python3 -m http.server` in this folder and visit http://localhost:8000.
