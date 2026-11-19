@@ -15,8 +15,8 @@
 const CONFIG = {
   /* ----- WHO'S WHO ------------------------------------------------- */
   girlfriendName: "Gio",
-  nickname: "Gio",                    // e.g. "bubu", "my love", "baby"
-  yourName: "Your Boyfriend",          // shown in signatures & footer
+  nickname: "Gio",                    // e.g. "bubu", "baby"
+  yourName: "Your Boyfriend",          // shown in the footer
   relationshipStart: "2024-01-01",     // YYYY-MM-DD — the day you met / got together
 
   /* ----- OPENING SCREEN -------------------------------------------- */
@@ -24,22 +24,6 @@ const CONFIG = {
     headline: "{NAME} IS FEELING DOWN.",
     subhead: "IMMEDIATE CHEER-UP PROTOCOL INITIATED.",
     message: "An urgent emotional support intervention has been requested. Our research department has assembled an extensive collection of scientific evidence proving that you are, in fact, absolutely wonderful."
-  },
-
-  /* ----- EMERGENCY HAPPINESS PROTOCOL ------------------------------ */
-  emergency: {
-    steps: [
-      "Emergency protocol activated.",
-      "Locating nearest available hugs...",
-      "Deploying 1,000 virtual kisses...",
-      "Calibrating happiness sensors...",
-      "Contacting the boyfriend for immediate cuddles...",
-      "Love delivery confirmed."
-    ],
-    stepDelayMs: 1100,                 // time between messages
-    finaleTitle: "YOU ARE LOVED. MORE THAN YOU KNOW. ♡",
-    finaleText: "Please accept this shipment of approximately 1,000 virtual hugs.",
-    hugCount: 1000
   },
 
   /* ----- LOADING SEQUENCE ------------------------------------------ */
@@ -67,7 +51,7 @@ const CONFIG = {
   ticker: [
     { label: "CUTENESS", value: "▲ 4.2%" },
     { label: "{NAME}/USD", value: "PRICELESS" },
-    { label: "HUG RESERVES", value: "▲ 1,000" },
+    { label: "ADORATION RESERVES", value: "▲ UNLIMITED" },
     { label: "SMILE INDEX", value: "▲ ALL-TIME HIGH" },
     { label: "KISS FUTURES", value: "▲ BULLISH" },
     { label: "MENACE LEVEL", value: "▲ AFFECTIONATE" },
@@ -95,19 +79,19 @@ const CONFIG = {
     },
     top10: {
       title: "Top 10 Things I Like About You",
-      labels: ["Your smile", "Your laugh", "Your eyes", "Your personality", "Your voice",
-               "Your intelligence", "Your hugs", "Your sense of humour", "Your little quirks", "Literally everything else"],
+      labels: ["Your calm allure", "Your shredded back", "Your top chef skills", "Your cat rescuing stories", "Your intelligence",
+               "The way you treat me", "Your little quirks", "Your sense of humour", "Your kinkiness", "You in yoga pants"],
       // Scores out of 100. Anything above 100 breaks the chart (on purpose).
-      values: [98, 97, 96, 95, 94, 93, 97, 92, 96, 99999],
+      values: [98, 97, 96, 97, 95, 98, 96, 95, 97, 99999],
       overflowLabel: "∞  OFF THE CHART ➜",
-      caption: "Ranking methodology: extensive research, personal experience, and being hopelessly in love."
+      caption: "Ranking methodology: extensive research, personal experience, and hopeless, unconditional adoration."
     },
-    loveOverTime: {
-      title: "My Love For You Over Time",
+    adorationOverTime: {
+      title: "My Adoration For You Over Time",
       xAxisTitle: "Time since meeting",
-      yAxisTitle: "Amount of love",
+      yAxisTitle: "Amount of adoration",
       points: 12,                       // number of data points drawn
-      warning: "WARNING: LOVE LEVELS HAVE EXCEEDED THE MAXIMUM MEASURABLE THRESHOLD.",
+      warning: "WARNING: ADORATION LEVELS HAVE EXCEEDED THE MAXIMUM MEASURABLE THRESHOLD.",
       annotation: "Scientists have lost the ability to measure this."
     },
     cuteness: {
@@ -135,18 +119,6 @@ const CONFIG = {
     disclaimer: "Further research is recommended. Preferably conducted in person."
   },
 
-  /* ----- DAILY HAPPINESS FORECAST ---------------------------------- */
-  forecastTitle: "Daily Happiness Forecast",
-  forecast: [
-    { day: "Mon", icon: "☀️", temp: "100%", text: "100% chance of being adorable." },
-    { day: "Tue", icon: "💋", temp: "Scattered", text: "Scattered kisses." },
-    { day: "Wed", icon: "🌡️", temp: "High", text: "High pressure from excessive cuteness." },
-    { day: "Thu", icon: "🤗", temp: "Warm", text: "Warm hugs approaching." },
-    { day: "Fri", icon: "🌙", temp: "Cosy", text: "Cuddles expected throughout the evening." },
-    { day: "Sat", icon: "🌈", temp: "Sunny", text: "Sunshine and spontaneous adventures." },
-    { day: "Sun", icon: "🧸", temp: "MAX", text: "Maximum snuggle probability." }
-  ],
-
   /* ----- MISSING YOU ANALYTICS ------------------------------------- */
   missingYou: {
     title: "Missing You Analytics",
@@ -156,44 +128,17 @@ const CONFIG = {
     errorText: "MissingYou.exe has stopped responding due to excessive affection."
   },
 
-  /* ----- COMPLIMENT GENERATOR -------------------------------------- */
-  complimentTitle: "Peer-Reviewed Compliment Generator",
-  compliments: [
-    "Your laugh has been classified as a renewable energy source.",
-    "You make the whole room feel softer just by being in it.",
-    "Studies show 10 out of 10 boyfriends think you're the prettiest.",
-    "You're the reason my phone's screen-time report looks the way it does.",
-    "Your hugs have been shown to fix approximately 94% of problems.",
-    "You are so much stronger than you feel right now.",
-    "The data is clear: you are extremely kissable.",
-    "You're the best part of my day, every day. Reproducible result.",
-    "You are proof that good things exist.",
-    "Your face has been nominated for a lifetime achievement award.",
-    "Being around you is my favourite place.",
-    "You are funny, clever, and dangerously cute. A rare combination."
-  ],
-
   /* ----- CLASSIFIED INTELLIGENCE (the sincere bit) ----------------- */
   classified: {
     title: "CLASSIFIED INTELLIGENCE: THINGS YOU SHOULD KNOW.",
     intro: "No charts in this section. Just a few things that are true.",
     messages: [
-      "You make ordinary days better.",
+      "You make me feel stronger.",
       "You don't have to be happy all the time.",
       "You're allowed to have bad days.",
-      "I'm always rooting for you.",
-      "You are loved, even on the days you don't feel particularly lovable."
+      "You make me want to be a better person.",
+      "You are adored, even on the days you don't feel particularly adorable."
     ]
-  },
-
-  /* ----- CERTIFICATE ----------------------------------------------- */
-  certificate: {
-    title: "OFFICIAL CERTIFICATION OF EXCELLENCE",
-    recipient: "{name}",
-    body: "This document hereby certifies that the bearer is the undisputed winner of being the most wonderful girlfriend in the universe.",
-    classification: "ABSOLUTELY IRREPLACEABLE.",
-    signatureScript: "{me}",          // handwritten-looking name above the line
-    signature: "Your very biased research department."
   },
 
   footer: "© The Research Department of {me}. All findings are final and non-negotiable. ♡"
@@ -246,7 +191,6 @@ const CONFIG = {
     const today = new Date();
     $("#incident-date").textContent = today.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" }).toUpperCase();
     $("#incident-no").textContent = String(daysTogether).padStart(4, "0");
-    $("#cert-date").textContent = today.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   }
 
   /* =====================================================================
@@ -272,7 +216,7 @@ const CONFIG = {
     }
   }
 
-  /** One-shot burst of hearts from a point (used by emergency + hug buttons). */
+  /** One-shot burst of hearts from a point (used by the hug button). */
   function burst(layer, x, y, n = 18) {
     if (REDUCED || !layer) return;
     for (let i = 0; i < n; i++) {
@@ -295,82 +239,12 @@ const CONFIG = {
      ===================================================================== */
   const screens = {
     opening: $("#opening"),
-    emergency: $("#emergency"),
     loading: $("#loading"),
     dashboard: $("#dashboard")
   };
   let dashboardReady = false;
 
   function lockScroll(lock) { document.body.classList.toggle("is-locked", lock); }
-
-  /* =====================================================================
-     EMERGENCY HAPPINESS PROTOCOL
-     ===================================================================== */
-  let emergencyRun = 0;           // cancels an in-flight sequence when bumped
-  let returnFocus = null;
-
-  async function startEmergency(evt) {
-    const run = ++emergencyRun;
-    returnFocus = evt && evt.currentTarget;
-    const ov = screens.emergency;
-    const log = $("#protocol-log");
-    const bar = $("#protocol-bar");
-    const consoleBox = $("#emergency-console");
-    const finale = $("#emergency-finale");
-    const layer = $("#emergency-floaters");
-
-    log.innerHTML = "";
-    bar.style.width = "0%";
-    finale.hidden = true;
-    consoleBox.hidden = false;
-    ov.hidden = false;
-    ov.classList.add("is-alert");
-    lockScroll(true);
-    populateFloaters(layer, 26);
-    $("#btn-emergency-return").focus({ preventScroll: true });
-
-    const steps = CONFIG.emergency.steps;
-    for (let i = 0; i < steps.length; i++) {
-      const prev = log.lastElementChild;
-      if (prev) { prev.classList.remove("is-working"); prev.classList.add("is-done"); }
-      const li = el("li", "is-working");
-      li.textContent = fmt(steps[i]);
-      log.appendChild(li);
-      bar.style.width = ((i + 1) / steps.length) * 100 + "%";
-      burst(layer, window.innerWidth * rand(.2, .8), window.innerHeight * rand(.2, .8), 8);
-      await sleep(CONFIG.emergency.stepDelayMs);
-      if (run !== emergencyRun) return;
-    }
-    log.lastElementChild?.classList.replace("is-working", "is-done");
-    await sleep(500);
-    if (run !== emergencyRun) return;
-
-    // Finale
-    consoleBox.hidden = true;
-    finale.hidden = false;
-    populateFloaters(layer, 48);
-    burst(layer, window.innerWidth / 2, window.innerHeight * .35, 40);
-    countUp($("#hug-count"), CONFIG.emergency.hugCount, 2200);
-    $("#btn-emergency-return").focus({ preventScroll: true });
-  }
-
-  function closeEmergency() {
-    emergencyRun++;
-    screens.emergency.hidden = true;
-    screens.emergency.classList.remove("is-alert");
-    $("#emergency-floaters").innerHTML = "";
-    // Only unlock scroll if we are back on the dashboard
-    lockScroll(!dashboardReady || !screens.opening.hidden);
-    if (returnFocus && document.body.contains(returnFocus)) returnFocus.focus({ preventScroll: true });
-  }
-
-  function moreHugs() {
-    const layer = $("#emergency-floaters");
-    burst(layer, window.innerWidth / 2, window.innerHeight * .35, 36);
-    const node = $("#hug-count");
-    const current = parseInt(node.textContent.replace(/\D/g, ""), 10) || 0;
-    countUp(node, current + CONFIG.emergency.hugCount, 1400, current);
-  }
 
   /* =====================================================================
      LOADING SEQUENCE → DASHBOARD
@@ -431,7 +305,7 @@ const CONFIG = {
     screens.opening.hidden = false;
     lockScroll(true);
     window.scrollTo(0, 0);
-    $("#btn-emergency").focus({ preventScroll: true });
+    $("#btn-evidence").focus({ preventScroll: true });
   }
 
   /* =====================================================================
@@ -440,7 +314,6 @@ const CONFIG = {
   function buildDashboard() {
     buildTicker();
     buildKpis();
-    buildForecast();
     buildReadings();
     buildClassified();
     setupReveal();
@@ -460,18 +333,6 @@ const CONFIG = {
         <div class="kpi__lbl">${esc(k.label)}</div>
         <div class="kpi__val">${esc(k.value)}</div>
         <div class="kpi__delta">${esc(k.delta)}</div>
-      </div>`).join("");
-  }
-
-  function buildForecast() {
-    // JS getDay(): 0 = Sun … 6 = Sat. Forecast list is Mon…Sun.
-    const todayIdx = (new Date().getDay() + 6) % 7;
-    $("#forecast").innerHTML = CONFIG.forecast.map((d, i) => `
-      <div class="day${i === todayIdx ? " is-today" : ""}">
-        <div class="day__name">${esc(d.day)}</div>
-        <div class="day__icon" style="--d:${(i * 0.3).toFixed(1)}s" aria-hidden="true">${d.icon}</div>
-        <div class="day__temp">${esc(d.temp)}</div>
-        <div class="day__text">${esc(d.text)}</div>
       </div>`).join("");
   }
 
@@ -507,7 +368,7 @@ const CONFIG = {
       [$("#chart-affection"), makeAffectionChart],
       [$("#chart-cuteness"), makeCutenessChart],
       [$("#chart-top10"), makeTop10Chart],
-      [$("#chart-love"), makeLoveChart],
+      [$("#chart-adoration"), makeAdorationChart],
       [$("#sec-thicc"), runThicc],
       [$("#missing-card"), runMissingYou]
     ]);
@@ -717,10 +578,10 @@ const CONFIG = {
     });
   }
 
-  // C. Love over time — progressively drawn line that breaks the ceiling
-  function makeLoveChart(canvas) {
+  // C. Adoration over time — progressively drawn line that breaks the ceiling
+  function makeAdorationChart(canvas) {
     if (!chartReady(canvas)) return;
-    const cfg = CONFIG.charts.loveOverTime;
+    const cfg = CONFIG.charts.adorationOverTime;
     const n = Math.max(6, cfg.points | 0);
     const THRESHOLD = 100;
 
@@ -773,7 +634,7 @@ const CONFIG = {
       data: {
         labels,
         datasets: [{
-          label: "Love",
+          label: "Adoration",
           data,
           borderColor: "#DB2777",
           borderWidth: 3,
@@ -810,13 +671,13 @@ const CONFIG = {
         },
         plugins: {
           legend: { display: false },
-          tooltip: { callbacks: { label: (c) => (c.raw > THRESHOLD ? " Love: ERROR (unmeasurable)" : ` Love: ${c.raw} units`) } }
+          tooltip: { callbacks: { label: (c) => (c.raw > THRESHOLD ? " Adoration: ERROR (unmeasurable)" : ` Adoration: ${c.raw} units`) } }
         }
       },
       plugins: [thresholdPlugin]
     });
 
-    setTimeout(() => $("#love-warning").classList.add("is-visible"), totalDuration + 300);
+    setTimeout(() => $("#adoration-warning").classList.add("is-visible"), totalDuration + 300);
   }
 
   /* =====================================================================
@@ -900,28 +761,6 @@ const CONFIG = {
     requestAnimationFrame(tick);
   }
 
-  /* =====================================================================
-     COMPLIMENT GENERATOR
-     ===================================================================== */
-  let lastCompliment = -1;
-  let complimentCount = 0;
-
-  function nextCompliment() {
-    const list = CONFIG.compliments;
-    if (!list.length) return;
-    let i;
-    do { i = Math.floor(Math.random() * list.length); } while (list.length > 1 && i === lastCompliment);
-    lastCompliment = i;
-    complimentCount++;
-    const box = $("#compliment");
-    box.classList.remove("is-new");
-    void box.offsetWidth; // restart animation
-    box.textContent = fmt(list[i]);
-    box.classList.add("is-new");
-    const p = (Math.random() * 0.0009 + 0.0001).toFixed(4);
-    $("#compliment-meta").textContent = `Finding #${String(complimentCount).padStart(3, "0")} · p = ${p} · highly significant`;
-  }
-
   /** Small burst of hearts around a button (inside the page, not the overlay). */
   function buttonBurst(btn) {
     if (REDUCED) return;
@@ -946,23 +785,15 @@ const CONFIG = {
     setupChartDefaults();
     populateFloaters($("#opening-floaters"), 22);
 
-    $("#btn-emergency").addEventListener("click", startEmergency);
-    $("#btn-nav-emergency").addEventListener("click", startEmergency);
-    $("#btn-emergency-return").addEventListener("click", closeEmergency);
-    $("#btn-emergency-more").addEventListener("click", moreHugs);
     $("#btn-evidence").addEventListener("click", startLoading);
     $("#btn-skip-loading").addEventListener("click", showDashboard);
     $("#btn-replay").addEventListener("click", replayOpening);
-    $("#btn-compliment").addEventListener("click", (e) => { nextCompliment(); buttonBurst(e.currentTarget); });
     $("#btn-missing-restart").addEventListener("click", runMissingYou);
     $("#btn-missing-hug").addEventListener("click", (e) => {
       buttonBurst(e.currentTarget);
       $("#missing-status").textContent = "Hug received. Missing levels remain critical. 💗";
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !screens.emergency.hidden) closeEmergency();
-    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

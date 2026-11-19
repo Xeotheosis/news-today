@@ -10,7 +10,7 @@
        and in link previews (WhatsApp, iMessage, Messenger, X, etc.).
        The page itself has nothing to do with any of it.
 
-       ▸ To change the thumbnail: drop a 1200×630 JPG at
+       ▸ To change the thumbnail: drop a 1200×670 (or 1200×630) JPG at
          assets/preview-thumbnail.jpg (see assets/README.md).
        ▸ og:image / twitter:image MUST be absolute URLs for most
          link-preview scrapers, so if you rename the repo or use a
@@ -28,7 +28,7 @@
   <meta property="og:url" content="https://xeotheosis.github.io/news-today/">
   <meta property="og:image" content="https://xeotheosis.github.io/news-today/assets/preview-thumbnail.jpg">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:height" content="670">
   <meta property="og:image:alt" content="Breaking news report">
 
   <!-- Twitter / X -->
@@ -53,7 +53,7 @@
   <a class="skip-link" href="#dashboard">Skip to the evidence</a>
 
   <!-- ==========================================================
-       1. OPENING SCREEN — Emergency Cheer-Up Protocol
+       1. OPENING SCREEN — Cheer-Up Protocol
        ========================================================== -->
   <section id="opening" class="screen screen--opening is-active" aria-labelledby="opening-title">
     <div class="float-layer" id="opening-floaters" aria-hidden="true"></div>
@@ -67,11 +67,10 @@
       <p class="opening-msg" data-tpl="opening.message"></p>
 
       <div class="opening-actions">
-        <button type="button" class="btn btn--emergency" id="btn-emergency">
+        <button type="button" class="btn btn--primary" id="btn-evidence">
           <span class="btn__shine" aria-hidden="true"></span>
-          🚨 INITIATE EMERGENCY HAPPINESS PROTOCOL
+          🔬 SHOW ME THE SCIENTIFIC EVIDENCE
         </button>
-        <button type="button" class="btn btn--secondary" id="btn-evidence">🔬 SHOW ME THE SCIENTIFIC EVIDENCE</button>
       </div>
 
       <p class="fineprint mono">Response time: immediate · Cost to you: nothing · Known side effects: smiling</p>
@@ -79,32 +78,7 @@
   </section>
 
   <!-- ==========================================================
-       2. EMERGENCY HAPPINESS PROTOCOL (full-screen overlay)
-       ========================================================== -->
-  <section id="emergency" class="overlay overlay--emergency" hidden role="dialog" aria-modal="true" aria-labelledby="emergency-title">
-    <div class="float-layer" id="emergency-floaters" aria-hidden="true"></div>
-
-    <div class="emergency-console" id="emergency-console">
-      <div class="siren" aria-hidden="true">🚨</div>
-      <h2 id="emergency-title" class="console-title mono">EMERGENCY HAPPINESS PROTOCOL</h2>
-      <ol class="protocol-log mono" id="protocol-log" aria-live="polite"></ol>
-      <div class="meter" aria-hidden="true"><span id="protocol-bar"></span></div>
-    </div>
-
-    <div class="emergency-finale" id="emergency-finale" hidden>
-      <div class="big-heart" aria-hidden="true">♡</div>
-      <h2 class="finale-title" data-tpl="emergency.finaleTitle"></h2>
-      <p class="finale-text" data-tpl="emergency.finaleText"></p>
-      <p class="hug-counter mono"><span id="hug-count">0</span> virtual hugs delivered</p>
-      <div class="finale-actions">
-        <button type="button" class="btn btn--secondary" id="btn-emergency-return">← Return to main interface</button>
-        <button type="button" class="btn btn--ghost" id="btn-emergency-more">💗 Send another shipment</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       3. LOADING SEQUENCE (between opening and dashboard)
+       2. LOADING SEQUENCE (between opening and dashboard)
        ========================================================== -->
   <section id="loading" class="overlay overlay--loading" hidden aria-labelledby="loading-title">
     <div class="loading-box">
@@ -118,7 +92,7 @@
   </section>
 
   <!-- ==========================================================
-       4. THE DASHBOARD
+       3. THE DASHBOARD
        ========================================================== -->
   <main id="dashboard" class="screen screen--dashboard" hidden tabindex="-1">
 
@@ -132,11 +106,9 @@
       <nav class="topbar__nav" aria-label="Sections">
         <a href="#sec-charts">Charts</a>
         <a href="#sec-thicc">Thicc Dept.</a>
-        <a href="#sec-forecast">Forecast</a>
+        <a href="#sec-missing">Missing You</a>
         <a href="#sec-classified">Classified</a>
-        <a href="#sec-certificate">Certificate</a>
       </nav>
-      <button type="button" class="btn btn--mini-emergency" id="btn-nav-emergency" aria-label="Initiate emergency happiness protocol">🚨<span class="hide-sm"> Emergency</span></button>
     </header>
 
     <!-- Ticker tape -->
@@ -185,18 +157,18 @@
         <p class="caption" data-tpl="charts.top10.caption"></p>
       </article>
 
-      <!-- C. Love over time -->
+      <!-- D. Adoration over time -->
       <article class="card card--wide reveal">
         <header class="card__head">
           <span class="card__tag mono">FIG. D</span>
-          <h2 class="card__title" data-tpl="charts.loveOverTime.title"></h2>
+          <h2 class="card__title" data-tpl="charts.adorationOverTime.title"></h2>
         </header>
-        <div class="chart-box"><canvas id="chart-love" aria-label="Line chart of my love for you over time" role="img"></canvas></div>
-        <div class="warning-banner" id="love-warning" aria-live="polite">
+        <div class="chart-box"><canvas id="chart-adoration" aria-label="Line chart of my adoration for you over time" role="img"></canvas></div>
+        <div class="warning-banner" id="adoration-warning" aria-live="polite">
           <span class="warning-banner__icon" aria-hidden="true">⚠</span>
           <div>
-            <strong class="mono" data-tpl="charts.loveOverTime.warning"></strong>
-            <span class="warning-banner__note" data-tpl="charts.loveOverTime.annotation"></span>
+            <strong class="mono" data-tpl="charts.adorationOverTime.warning"></strong>
+            <span class="warning-banner__note" data-tpl="charts.adorationOverTime.annotation"></span>
           </div>
         </div>
       </article>
@@ -244,19 +216,11 @@
       </article>
     </section>
 
-    <!-- F. Forecast + G. Missing you + Compliment generator -->
-    <section id="sec-forecast" class="grid">
-      <article class="card card--wide reveal">
+    <!-- Missing You Analytics -->
+    <section id="sec-missing" class="grid">
+      <article class="card card--wide reveal" id="missing-card">
         <header class="card__head">
           <span class="card__tag mono">FIG. E</span>
-          <h2 class="card__title" data-tpl="forecastTitle"></h2>
-        </header>
-        <div class="forecast" id="forecast"></div>
-      </article>
-
-      <article class="card reveal" id="missing-card">
-        <header class="card__head">
-          <span class="card__tag mono">FIG. F</span>
           <h2 class="card__title" data-tpl="missingYou.title"></h2>
         </header>
         <p class="mono missing__status" id="missing-status">Monitoring…</p>
@@ -281,63 +245,15 @@
         </div>
       </article>
 
-      <article class="card reveal">
-        <header class="card__head">
-          <span class="card__tag mono">LAB 07</span>
-          <h2 class="card__title" data-tpl="complimentTitle"></h2>
-        </header>
-        <blockquote class="compliment" id="compliment" aria-live="polite">Press the button to generate a peer-reviewed compliment.</blockquote>
-        <p class="mono compliment__meta" id="compliment-meta">Sample size: 1 (perfect)</p>
-        <button type="button" class="btn btn--secondary btn--full" id="btn-compliment">✨ Generate compliment</button>
-      </article>
     </section>
 
-    <!-- 7. Classified intelligence -->
+    <!-- Classified intelligence -->
     <section id="sec-classified" class="classified reveal" aria-labelledby="classified-title">
       <div class="classified__stamp mono" aria-hidden="true">CLASSIFIED</div>
       <p class="eyebrow mono">FILE 00 · EYES ONLY · CLEARANCE LEVEL: YOU</p>
       <h2 id="classified-title" class="classified__title" data-tpl="classified.title"></h2>
       <p class="classified__intro" data-tpl="classified.intro"></p>
       <div class="notes" id="classified-notes"></div>
-    </section>
-
-    <!-- 8. Certificate -->
-    <section id="sec-certificate" class="cert-wrap reveal" aria-labelledby="cert-title">
-      <div class="cert">
-        <div class="cert__corner cert__corner--tl" aria-hidden="true">❦</div>
-        <div class="cert__corner cert__corner--tr" aria-hidden="true">❦</div>
-        <div class="cert__corner cert__corner--bl" aria-hidden="true">❦</div>
-        <div class="cert__corner cert__corner--br" aria-hidden="true">❦</div>
-
-        <p class="cert__org mono">THE GIRLFRIEND APPRECIATION INDEX™ · DEPARTMENT OF RESEARCH</p>
-        <h2 id="cert-title" class="cert__title" data-tpl="certificate.title"></h2>
-        <p class="cert__awarded">awarded to</p>
-        <p class="cert__name" data-tpl="certificate.recipient"></p>
-        <p class="cert__body" data-tpl="certificate.body"></p>
-        <p class="cert__class"><span class="mono">CLASSIFICATION</span><strong data-tpl="certificate.classification"></strong></p>
-
-        <div class="cert__foot">
-          <div class="cert__sig">
-            <span class="cert__sig-name" data-tpl="certificate.signatureScript"></span>
-            <span class="cert__sig-line"></span>
-            <span class="cert__sig-lbl" data-tpl="certificate.signature"></span>
-          </div>
-
-          <div class="seal" aria-label="Official research seal" role="img">
-            <div class="seal__ring">
-              <span class="seal__top mono">OFFICIAL</span>
-              <span class="seal__heart" aria-hidden="true">♥</span>
-              <span class="seal__bot mono">GAI™ SEAL</span>
-            </div>
-          </div>
-
-          <div class="cert__sig">
-            <span class="cert__sig-name cert__sig-name--date" id="cert-date"></span>
-            <span class="cert__sig-line"></span>
-            <span class="cert__sig-lbl">Date of certification</span>
-          </div>
-        </div>
-      </div>
     </section>
 
     <footer class="footer">
