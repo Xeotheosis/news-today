@@ -32,7 +32,7 @@ Everything text-related is in the `CONFIG` object at the very top of `script.js`
 | `girlfriendName` | Her name (default **Gio**) — used in the headline and ticker |
 | `nickname` | Available as `{nickname}` in any text |
 | `yourName` | Footer |
-| `relationshipStart` | `YYYY-MM-DD` — drives "Days of research" and the adoration-over-time x-axis |
+| `relationshipStart` | `YYYY-MM-DD`, or an approximation like `"± 30 days"` (shown as "± 30") — drives "Days of research" and the adoration-over-time x-axis |
 | `opening` | Headline, subheading and message on the first screen |
 | `loading` | Loading messages and the final "ANALYSIS COMPLETE" line |
 | `ticker`, `kpis` | Stock-ticker items and the four stat tiles |

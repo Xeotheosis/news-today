@@ -16,8 +16,10 @@ const CONFIG = {
   /* ----- WHO'S WHO ------------------------------------------------- */
   girlfriendName: "Gio",
   nickname: "Gio",                    // e.g. "bubu", "baby"
-  yourName: "Your Boyfriend",          // shown in the footer
-  relationshipStart: "2024-01-01",     // YYYY-MM-DD — the day you met / got together
+  yourName: "Andrei",                 // shown in the footer
+  // Either an exact date ("2025-10-20") or an approximate number of days ("± 30 days").
+  // The approximate form is shown as-is (e.g. "± 30") wherever the day count appears.
+  relationshipStart: "± 30 days",
 
   /* ----- OPENING SCREEN -------------------------------------------- */
   opening: {
@@ -157,11 +159,18 @@ const CONFIG = {
   const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const sleep = (ms) => new Promise((r) => setTimeout(r, REDUCED ? Math.min(ms, 150) : ms));
 
+  // relationshipStart can be "YYYY-MM-DD" or an approximation like "± 30 days"
+  const approxMatch = String(CONFIG.relationshipStart).match(/^\s*(±|\+\/-|~)?\s*(\d+)\s*days?\s*$/i);
+  const startDate = approxMatch
+    ? new Date(Date.now() - Number(approxMatch[2]) * 86400000)
+    : new Date(CONFIG.relationshipStart + "T00:00:00");
   const daysTogether = (() => {
-    const start = new Date(CONFIG.relationshipStart + "T00:00:00");
-    const d = Math.floor((Date.now() - start.getTime()) / 86400000);
+    const d = Math.floor((Date.now() - startDate.getTime()) / 86400000);
     return Number.isFinite(d) && d > 0 ? d : 1;
   })();
+  const daysLabel = approxMatch && approxMatch[1]
+    ? `± ${daysTogether.toLocaleString("en-GB")}`
+    : daysTogether.toLocaleString("en-GB");
 
   /** Replace {name}, {NAME}, {nickname}, {me}, {days} placeholders. */
   const fmt = (str) => String(str ?? "")
@@ -169,7 +178,7 @@ const CONFIG = {
     .replaceAll("{name}", CONFIG.girlfriendName)
     .replaceAll("{nickname}", CONFIG.nickname)
     .replaceAll("{me}", CONFIG.yourName)
-    .replaceAll("{days}", daysTogether.toLocaleString("en-GB"));
+    .replaceAll("{days}", daysLabel);
 
   /** Read a dotted path like "charts.top10.title" from CONFIG. */
   const get = (path) => path.split(".").reduce((o, k) => (o == null ? o : o[k]), CONFIG);
@@ -586,13 +595,17 @@ const CONFIG = {
     const THRESHOLD = 100;
 
     // Labels spread evenly from the day you met until today
-    const start = new Date(CONFIG.relationshipStart + "T00:00:00");
+    const start = startDate;
     const end = new Date();
+    const spanDays = (end - start) / 86400000;
     const labels = Array.from({ length: n }, (_, i) => {
       if (i === 0) return "Day 1";
       if (i === n - 1) return "Today";
       const d = new Date(start.getTime() + (end - start) * (i / (n - 1)));
-      return d.toLocaleDateString("en-GB", { month: "short", year: "2-digit" });
+      // Short relationships get "Day N" labels; longer ones get months
+      return spanDays < 120
+        ? `Day ${Math.max(1, Math.round(spanDays * (i / (n - 1))))}`
+        : d.toLocaleDateString("en-GB", { month: "short", year: "2-digit" });
     });
     // Steady increase (slightly exponential) with the last point blowing past the ceiling
     const data = labels.map((_, i) => {
