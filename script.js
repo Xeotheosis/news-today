@@ -23,7 +23,7 @@ const CONFIG = {
 
   /* ----- OPENING SCREEN -------------------------------------------- */
   opening: {
-    headline: "{NAME} IS FEELING DOWN.",
+    headline: "{NAME} IS FEELING DOWN!",
     subhead: "IMMEDIATE CHEER-UP PROTOCOL INITIATED.",
     message: "An urgent emotional support intervention has been requested. Our research department has assembled an extensive collection of scientific evidence proving that you are, in fact, absolutely wonderful."
   },
